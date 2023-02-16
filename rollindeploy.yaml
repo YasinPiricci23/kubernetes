@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: rolldeployment
+  labels:
+    team: development
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: rolling
+  strategy:
+    type: rollingUpdate
+    rollingUpdate:
+      maxUnavailable: 3
+      maxSurge: 3
+  template:
+    metadata:
+      labels:
+        app: rolling
+    spec:
+      containers:
+        - name: webapp
+          image: nginx:latest
+          ports:
+            - containerPort: 80
