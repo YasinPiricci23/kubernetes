@@ -10,7 +10,7 @@ spec:
     matchLabels:
       app: rolling
   strategy:
-    type: rollingUpdate
+    type: RollingUpdate
     rollingUpdate:
       maxUnavailable: 3
       maxSurge: 3
