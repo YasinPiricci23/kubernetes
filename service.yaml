@@ -38,6 +38,6 @@ spec:
     spec:
       containers:
         - name: backend
-          image: python
+          image: redis
           ports:
             - containerPort: 5000
