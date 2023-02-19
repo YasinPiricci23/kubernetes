@@ -38,6 +38,6 @@ spec:
     spec:
       containers:
         - name: backend
-          image: phoenixs/python:latest
+          image: python
           ports:
             - containerPort: 5000
